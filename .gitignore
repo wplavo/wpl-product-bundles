@@ -1,0 +1,44 @@
+# ── Composer ──────────────────────────────────────────────────────────────────
+/vendor/
+composer.json
+composer.lock
+
+# ── Developer tooling ─────────────────────────────────────────────────────────
+/tests/
+/bin/
+phpcs.xml.dist
+phpstan.neon
+phpstan-bootstrap.php
+phpunit.xml.dist
+.phpunit.result.cache
+.phpunit.cache/
+/.phpstan/
+
+# ── Internal / non-distributable docs ─────────────────────────────────────────
+/docs/ARCHITECTURE.md
+/docs/DATA-MODEL.md
+/docs/TEST-PLAN.md
+/docs/SECURITY-AUDIT.md
+/docs/PERFORMANCE.md
+
+# ── Build output ──────────────────────────────────────────────────────────────
+*.zip
+
+# ── Claude memory ─────────────────────────────────────────────────────────────
+/memory/
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE / editor ──────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── Local environment ─────────────────────────────────────────────────────────
+.env
+.env.local

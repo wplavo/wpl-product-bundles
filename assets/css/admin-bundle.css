@@ -1,0 +1,203 @@
+/* WPL Product Bundles — Admin Bundle Panel Styles
+   Scoped to #wpl_bundle_data to avoid bleeding into other WC tabs. */
+
+/* ── Panel container ─────────────────────────────────────────────────────── */
+
+#wpl_bundle_data {
+	padding: 0;
+}
+
+#wpl_bundle_data .options_group {
+	padding: 12px 16px 8px;
+	border-bottom: 1px solid #e2e4e7;
+}
+
+#wpl_bundle_data .options_group:last-of-type {
+	border-bottom: 0;
+}
+
+#wpl_bundle_data .options_group > p {
+	margin: 0 0 10px;
+}
+
+#wpl_bundle_data .form-field {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+#wpl_bundle_data .form-field label {
+	min-width: 180px;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+/* ── Component row ───────────────────────────────────────────────────────── */
+
+.wpl-component-row {
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	background: #fff;
+}
+
+.wpl-component-row__header {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 12px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #c3c4c7;
+	border-radius: 3px 3px 0 0;
+	cursor: default;
+}
+
+.wpl-comp-header-name {
+	flex: 1;
+	font-weight: 600;
+	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wpl-comp-move-up,
+.wpl-comp-move-down,
+.wpl-comp-remove {
+	padding: 2px 5px;
+	font-size: 13px;
+	color: #646970;
+	text-decoration: none;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	line-height: 1;
+}
+
+.wpl-comp-move-up:hover,
+.wpl-comp-move-down:hover {
+	color: #2271b1;
+}
+
+.wpl-comp-remove {
+	margin-left: auto;
+	color: #b32d2e;
+}
+
+.wpl-comp-remove:hover {
+	color: #8a2122;
+}
+
+/* ── Component fields table ──────────────────────────────────────────────── */
+
+.wpl-component-row__fields {
+	padding: 10px 12px;
+	/* Establish a containing block so position:absolute children (e.g. select2
+	   dropdowns) are positioned relative to this element, not the WC panel. */
+	position: relative;
+}
+
+.wpl-component-fields {
+	border: 0;
+	box-shadow: none;
+}
+
+.wpl-component-fields td {
+	padding: 5px 8px 5px 0;
+	border: 0;
+	vertical-align: middle;
+}
+
+.wpl-component-fields .wpl-field-label {
+	width: 190px;
+	font-weight: 600;
+	color: #3c434a;
+	font-size: 12px;
+}
+
+/*
+ * WooCommerce admin CSS applies `float: left; width: 150px` (or
+ * `position: absolute; left: 0`) to label elements inside
+ * .woocommerce_options_panel. Our td.wpl-field-label labels are purely
+ * visual (no `for` attribute) and must stay inside the table cell.
+ * Override WC's label rules with explicit resets.
+ */
+.wpl-component-fields td.wpl-field-label .wpl-comp-label {
+	display: inline;
+	float: none;
+	position: static;
+	width: auto;
+	min-width: 0;
+	padding: 0;
+	clear: none;
+	line-height: inherit;
+	font-weight: 600;
+	color: #3c434a;
+	font-size: 12px;
+}
+
+/* Inputs in the second column keep normal label styling. */
+.wpl-component-fields td label {
+	float: none !important;
+	position: static !important;
+	width: auto !important;
+	display: inline !important;
+	padding: 0 !important;
+	clear: none !important;
+	font-weight: normal;
+}
+
+/* ── Quantity row ────────────────────────────────────────────────────────── */
+
+.wpl-qty-row {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.wpl-qty-sep {
+	color: #646970;
+	font-size: 13px;
+}
+
+/* ── Price tiers table ───────────────────────────────────────────────────── */
+
+.wpl-price-tiers-table th,
+.wpl-price-tiers-table td {
+	padding: 5px 8px;
+	font-size: 13px;
+}
+
+.wpl-price-tiers-table th {
+	font-weight: 600;
+}
+
+.wpl-price-tiers-table input.short {
+	width: 80px;
+}
+
+/* ── Add / remove buttons ────────────────────────────────────────────────── */
+
+.wpl-add-component,
+.wpl-add-tier {
+	margin-top: 6px !important;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 782px) {
+	#wpl_bundle_data .form-field label {
+		min-width: 100%;
+	}
+
+	.wpl-component-fields .wpl-field-label {
+		width: 100%;
+	}
+
+	.wpl-component-fields td {
+		display: block;
+		width: 100%;
+	}
+}
